@@ -1,0 +1,11 @@
+% get depth values
+depth = extract_depth(profiles);
+
+% filter outliers
+index = 1:length(depth);
+% pull out rediculous nulls
+ix = find(depth<-100);
+index(ix) = [];
+depth(ix) = [];
+
+plot(ix,depth)
